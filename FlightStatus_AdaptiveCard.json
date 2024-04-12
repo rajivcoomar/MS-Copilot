@@ -1,0 +1,138 @@
+{
+  type: "AdaptiveCard",
+  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+  version: "1.5",
+  body: [
+    {
+      type: "TextBlock",
+      text: "Your Flight Update",
+      wrap: true,
+      style: "heading"
+    },
+    {
+      type: "Table",
+      columns: [
+        {
+          width: "1"
+        },
+        {
+          width: "1"
+        },
+        {
+          width: "1"
+        }
+      ],
+      rows: [
+        {
+          type: "TableRow",
+          cells: [
+            {
+              type: "TableCell",
+              items: [
+                {
+                  type: "Image",
+                  size: "small",
+                  url: "https://adaptivecards.io/content/airplane.png",
+                  altText: "Airplane"
+                }
+              ]
+            },
+            {
+              type: "TableCell"
+            },
+            {
+              type: "TableCell",
+              items: [
+                {
+                  type: "TextBlock",
+                  text: "Flight Status",
+                  horizontalAlignment: "right",
+                  isSubtle: true,
+                  wrap: true
+                },
+                {
+                  type: "TextBlock",
+                  text: Topic.FlightStatus,
+                  horizontalAlignment: "right",
+                  spacing: "none",
+                  size: "large",
+                  color: "attention",
+                  wrap: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          type: "TableRow",
+          cells: [
+            {
+              type: "TableCell",
+              items: [
+                {
+                  type: "TextBlock",
+                  text: "Flight",
+                  isSubtle: true,
+                  weight: "bolder",
+                  wrap: true
+                },
+                {
+                  type: "TextBlock",
+                  text: Topic.UserEnteredFlightNumber,
+                  spacing: "small",
+                  wrap: true
+                }
+              ]
+            },
+            {
+              type: "TableCell",
+              items: [
+                {
+                  type: "TextBlock",
+                  text: "Departs",
+                  isSubtle: true,
+                  horizontalAlignment: "center",
+                  weight: "bolder",
+                  wrap: true
+                },
+                {
+                  type: "TextBlock",
+                  text: Topic.DepPort,
+                  color: "attention",
+                  weight: "bolder",
+                  horizontalAlignment: "center",
+                  spacing: "small",
+                  wrap: true
+                }
+              ]
+            },
+            {
+              type: "TableCell",
+              items: [
+                {
+                  type: "TextBlock",
+                  text: "Arrives",
+                  isSubtle: true,
+                  horizontalAlignment: "right",
+                  weight: "bolder",
+                  wrap: true
+                },
+                {
+                  type: "TextBlock",
+                  text: Topic.ArrPort,
+                  color: "attention",
+                  horizontalAlignment: "right",
+                  weight: "bolder",
+                  spacing: "small",
+                  wrap: true
+                }
+              ]
+            }
+          ]
+        },
+      
+      ],
+      showGridLines: false
+    }
+  ]
+}
