@@ -1,0 +1,60 @@
+{
+  type: "AdaptiveCard",
+  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+  version: "1.4",
+  body: [
+   
+    {
+      type: "Container",
+      separator: true, 
+      items:    [
+        {
+          type: "TextBlock",
+          text: "Title 1",
+          size: "Medium"
+        },
+        {
+          type: "Image",
+          url: "https://via.placeholder.com/200x200",
+          size: "Medium"
+        },
+        {
+          type: "ActionSet",
+          actions: [
+            {
+              type: "Action.OpenUrl",
+              title: "Buy it",
+              url: "https://example.com/product1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      type: "Container",
+      separator: true, 
+      items:    [
+        {
+          type: "TextBlock",
+          text: "Title 1",
+          size: "Medium"
+        },
+        {
+          type: "Image",
+          url: "https://via.placeholder.com/200x200",
+          size: "Medium"
+        },
+        {
+          type: "ActionSet",
+          actions: [
+            {
+              type: "Action.OpenUrl",
+              title: "Buy it",
+              url: "https://example.com/product1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

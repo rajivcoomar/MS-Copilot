@@ -1,0 +1,121 @@
+{
+  type: "AdaptiveCard",
+  '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+  version: "1.4",
+  body: [
+    {
+      type: "TextBlock",
+      size: "Medium",
+      weight: "Bolder",
+      text: "Flipkart Product Search Result : ",
+      horizontalAlignment: "Center"
+    },
+    {
+            type: "Container",
+            spacing: "none",
+            style: "emphasis",
+            items: [
+                {
+                    type: "ColumnSet",
+                    columns: [
+                        {
+                            type: "Column",
+                            items: [
+                                {
+                                    type: "TextBlock",
+                                    weight: "bolder",
+                                    text: "Description",
+									horizontalAlignment:true,
+                                    wrap: true
+                                }
+                            ],
+                            width: "120px",
+							verticalContentAlignment: "Top",
+							separator: true
+                        },
+                        
+                        {
+                            type: "Column",
+                            items: [
+                                {
+                                    type: "TextBlock",
+                                    weight: "bolder",
+                                    text: "Image",
+									horizontalAlignment:true,
+                                    wrap: true
+                                }
+                            ],
+                            width: "40px",
+							verticalContentAlignment: "Top",
+							separator: true
+                        },
+                        {
+                            type: "Column",
+                            items: [
+                                {
+                                    type: "TextBlock",
+                                    weight: "bolder",
+                                    text: "Click to Buy",
+									horizontalAlignment:true,
+                                    wrap: true
+                                }
+                            ],
+                            width: "35px",
+							verticalContentAlignment: "Top",
+							separator: true
+                        }
+                    ]
+                },
+                  {
+            type: "ColumnSet",
+            columns: [
+                {
+                type: "Column",
+                width: "120px",
+                items: ForAll(Topic.AdaptiveCardTemplate.products,{
+                    type:"TextBlock",
+                    text:ThisRecord.productBaseInfoV1.title,
+                    wrap:true,
+                    horizontalAlignment:true,
+                   size: "Small",
+                    weight: "Lighter"
+                }),
+                verticalContentAlignment: "Top",
+                spacing : "no",
+                separator: true
+                },
+                {
+                type:"Column",
+                width:"40px",
+                items:ForAll(Topic.AdaptiveCardTemplate.products,{
+                    type:"Image",
+                    url:ThisRecord.productBaseInfoV1.imageUrls.'200x200',
+                    size: "Small"
+                }),
+                verticalContentAlignment:"Top",
+                separator: true
+                },
+                {
+                type:"Column",
+                width:"35px",
+                items:ForAll(Topic.AdaptiveCardTemplate.products,{
+				  type: "ActionSet",
+				  actions: [
+					{
+					  type: "Action.OpenUrl",
+					  title: "🛒",
+                      size: "Medium",
+					  url: ThisRecord.productBaseInfoV1.productUrl
+					}
+				  ]
+				}),
+                
+                separator: true
+                }
+            ]
+            }
+        ]
+
+    }
+  ]
+}
